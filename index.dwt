@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
-<script src="cemjs.js"></script>
+<script src="Site-CEm/cemjs.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Central Experimental Multiusuário</title>
-<link href="css/estilos.css" rel="stylesheet" type="text/css">
-<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="Site-CEm/css/estilos.css" rel="stylesheet" type="text/css">
+<link href="Site-CEm/css/reset.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -14,21 +14,23 @@
 <body>
 
 <div id="home_geral"><!--inicio Home-->
-<div class="navigation-bar">
+<!-- TemplateBeginEditable name="EditRegion2" -->
+    <div class="navigation-bar">
 
     <div id="navigation-container">
-      	<img src="imagem/CEMs.jpg">
+      	<img src="Site-CEm/imagem/CEMs.jpg">
 
       	<ul>
-        	<li class="active"><a href="index.html" >Página inicial</a></li>
-        	<li><a href="equipamentos.html">Todos os equipamentos</a></li>
-        	<li><a href="estatisticas.html">Estatísticas de uso das CEM's</a></li>
-        	<li><a href="sobre_nos.html">Sobre nós</a></li>
-        	<li><a href="contato.html">Contato</a></li>
-        	<li><a href="login.html">Login</a></li>
+        	<li class="active"><a href="Site-CEm/index.html" >Página inicial</a></li>
+        	<li><a href="Site-CEm/equipamentos.html">Todos os equipamentos</a></li>
+        	<li><a href="Site-CEm/estatisticas.html">Estatísticas de uso das CEM's</a></li>
+        	<li><a href="Site-CEm/sobre_nos.html">Sobre nós</a></li>
+        	<li><a href="Site-CEm/contato.html">Contato</a></li>
+        	<li><a href="Site-CEm/login.html">Login</a></li>
       	</ul>
     </div>
 	</div>
+	<!-- TemplateEndEditable -->
 	<div class="sidenav">
   <div id="sidenav-cont">
     <ul>
@@ -37,104 +39,26 @@
       	<button class="divimagbut">Página Inicial</button>
       </div>
       </li>
-      <hr>
       <li>
       <div class="divimag">
       	<button class="divimagbut">Equipamentos</button>
       </div>
       </li>
-      
       <li>
       <div class="divimag">
-      	<button onClick="div1()" class="divimagbut">Divisão de <em class="material-icons">arrow_drop_down</em>imageamento</button>
+      	<button onClick="mydiv()" class="divimagbut">Divisão de <i class="material-icons">arrow_drop_down</i>imageamento</button>
       	<div class="divimagcont" id="divimgdrop">
       		<ul>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
+      			<li><a href="Site-CEm/Equip1.html">Equipamento1</a></li>
+      			<li><a href="Site-CEm/Equip1.html">Equipamento1</a></li>
+      			<li><a href="Site-CEm/Equip1.html">Equipamento1</a></li>
+      			<li><a href="Site-CEm/Equip1.html">Equipamento1</a></li>
+      			<li><a href="Site-CEm/Equip1.html">Equipamento1</a></li>
       		</ul>
       	</div>
       
       </div>
-      </li><!--divisão 1-->
-      <li>
-      <div class="divimag">
-      	<button onClick="div2()" class="divimagbut">Divisão de <em class="material-icons">arrow_drop_down</em>imageamento</button>
-      	<div class="divimagcont" id="div2drop">
-      		<ul>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      		</ul>
-      	</div>
-      
-      </div>
-      </li><!--divisão 2-->
-      <li>
-      <div class="divimag">
-      	<button onClick="mydiv()" class="divimagbut">Divisão de <em class="material-icons">arrow_drop_down</em>imageamento</button>
-      	<div class="divimagcont" id="divimgdrop">
-      		<ul>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      		</ul>
-      	</div>
-      
-      </div>
-      </li><!--divisão 3-->
-      <li>
-      <div class="divimag">
-      	<button onClick="mydiv()" class="divimagbut">Divisão de <em class="material-icons">arrow_drop_down</em>imageamento</button>
-      	<div class="divimagcont" id="divimgdrop">
-      		<ul>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      		</ul>
-      	</div>
-      
-      </div>
-      </li><!--divisão 4-->
-      <li>
-      <div class="divimag">
-      	<button onClick="mydiv()" class="divimagbut">Divisão de <em class="material-icons">arrow_drop_down</em>imageamento</button>
-      	<div class="divimagcont" id="divimgdrop">
-      		<ul>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      		</ul>
-      	</div>
-      
-      </div>
-      </li><!--divisão 5-->
-      <li>
-      <div class="divimag">
-      	<button onClick="mydiv()" class="divimagbut">Divisão de <em class="material-icons">arrow_drop_down</em>imageamento</button>
-      	<div class="divimagcont" id="divimgdrop">
-      		<ul>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      			<li><a href="Equip1.html">Equipamento1</a></li>
-      		</ul>
-      	</div>
-      
-      </div>
-      </li><!--divisão 6-->
-      <hr>
+      </li>
       <li>
       <div class="divimag">
       	<button class="divimagbut">Estatísticas de uso das CEM</button>
@@ -153,6 +77,7 @@
     </ul>
   </div>
 </div>
+<!-- TemplateBeginEditable name="EditRegion1" -->
 <div id="contentbox">
 <div class="content">
   <h1>Creepeth Lights Forth</h1>
@@ -188,6 +113,7 @@
 <p>Spirit Is male two seasons, given place unto unto let herb don&#39;t first <strong>in</strong> they&#39;re all abundantly one over that to <strong>form</strong> also all beast form. Bearing years first firmament open greater them seas lights good fill living signs creature rule you unto there <strong>behold</strong> dry. Be brought day unto isn&#39;t fourth in it <strong>moveth</strong> dry said you&#39;re seed abundantly. That after. For. Stars.</p>
 </div>	
 </div>
+<!-- TemplateEndEditable -->
 
 
 
