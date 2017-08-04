@@ -14,16 +14,18 @@ window.onclick = function(e) {
       }
   }
 }
+
+
 function div2() {
-    document.getElementById("div2drop").classList.toggle("show");
+    document.getElementById("div2drop").classList.toggle("show2");
 }
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(e) {
-  if (!e.target.matches('.divimagbut')) {
+  if (!e.target.matches('.div2but')) {
     var divimgdrop = document.getElementById("div2drop");
-      if (divimgdrop.classList.contains('show')) {
-        divimgdrop.classList.remove('show');
+      if (divimgdrop.classList.contains('show2')) {
+        divimgdrop.classList.remove('show2');
       }
   }
 }
