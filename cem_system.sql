@@ -57,3 +57,28 @@ CREATE TABLE equipments (
   PRIMARY KEY (equipment_id),
   FOREIGN KEY (division_id) REFERENCES division(division_id)
 );
+
+
+-- Divisões de equipamentos
+CREATE TABLE divisions (
+  division_id int NOT NULL UNIQUE AUTO_INCREMENT,
+  name varchar(60) NOT NULL,
+  PRIMARY KEY (division_id)
+);
+
+-- Agendamentos
+CREATE TABLE schedules (
+  schedule_id int NOT NULL UNIQUE AUTO_INCREMENT,
+  request timestamp DEFAULT CURRENT_TIMESTAMP,
+  user_id int NOT NULL,
+  equipment_id int NOT NULL,
+  project_id int,
+  sample varchar(2048) NOT NULL,
+  begin_time datetime NOT NULL,
+  end_time datetime NOT NULL,
+  confirmation boolean,
+  PRIMARY KEY (schedule_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id),
+  FOREIGN KEY (equipment_id) REFERENCES equipments(equipment_id),
+  FOREIGN KEY (project_id) REFERENCES projects(project_id)
+);
