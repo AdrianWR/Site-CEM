@@ -1,4 +1,30 @@
-CREATE DATABASE cem_system /*!40100 DEFAULT CHARACTER SET utf8*/;
+CREATE DATABASE IF NOT EXISTS cem /*!40100 DEFAULT CHARACTER SET utf8*/;
+USE cem;
+
+-- Status do usuário com a CEM
+CREATE TABLE status (
+  status_id int NOT NULL UNIQUE AUTO_INCREMENT,
+  status varchar(20) NOT NULL UNIQUE,
+  PRIMARY KEY (status_id)
+);
+
+INSERT INTO status(status) VALUES ('Ativo'),
+                                  ('Inativo');
+
+-- Relacionamento do usuário com a UFABC
+CREATE TABLE linkages (
+  linkage_id int NOT NULL UNIQUE AUTO_INCREMENT,
+  bond varchar(40) NOT NULL UNIQUE,
+  PRIMARY KEY (linkage_id)
+);
+
+INSERT INTO linkages(bond) VALUES ('Coordenação Geral das CEMs'),
+                                  ('Coordenação Local da CEM'),
+                                  ('Técnico-Administrativo'),
+                                  ('Docente'),
+                                  ('Graduação'),
+                                  ('Pós-Graduação - Mestrado'),
+                                  ('Pós-Graduação - Doutorado');
 
 -- Tabela inicial com todos os usuários da CEM
 CREATE TABLE users (
@@ -7,34 +33,13 @@ CREATE TABLE users (
   email varchar(45) NOT NULL,
   phone varchar(20) NOT NULL,
   branch_line varchar(4),
-  signup_time timestamp DEFAULT(CURRENT_TIMESTAMP),
+  signup_time timestamp DEFAULT CURRENT_TIMESTAMP,
   status_id int,
   linkage_id int,
   PRIMARY KEY (user_id),
   FOREIGN KEY (status_id) REFERENCES status(status_id),
   FOREIGN KEY (linkage_id) REFERENCES linkages(linkage_id)
 );
-
--- Status do usuário com a CEM
-CREATE TABLE status (
-  status_id int NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
-  status varchar(20) NOT NULL UNIQUE,
-);
-INSERT INTO status(description) VALUES ('Inativo'),
-                                       ('Ativo');
-
--- Relacionamento do usuário com a UFABC
-CREATE TABLE linkages (
-  linkage_id int NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
-  bond varchar(40) NOT NULL UNIQUE,
-);
-INSERT INTO linkages(bond) VALUES ('Coordenação Geral das CEMs'),
-                                  ('Coordenação Local da CEM'),
-                                  ('Técnico-Administrativo'),
-                                  ('Docente'),
-                                  ('Graduação'),
-                                  ('Pós-Graduação - Mestrado'),
-                                  ('Pós-Graduação - Doutorado');
 
 -- Projetos de pesquisa vinculados à CEM
 CREATE TABLE projects (
@@ -45,7 +50,12 @@ CREATE TABLE projects (
   PRIMARY KEY (project_id)
 );
 
-
+-- Divisões de equipamentos
+CREATE TABLE divisions (
+  division_id int NOT NULL UNIQUE AUTO_INCREMENT,
+  name varchar(60) NOT NULL,
+  PRIMARY KEY (division_id)
+);
 
 -- Tabela de equipamentos pertencentes à CEM
 CREATE TABLE equipments (
@@ -55,21 +65,13 @@ CREATE TABLE equipments (
   division_id int,
   require_training boolean,
   PRIMARY KEY (equipment_id),
-  FOREIGN KEY (division_id) REFERENCES division(division_id)
+  FOREIGN KEY (division_id) REFERENCES divisions(division_id)
 );
 
-
--- Divisões de equipamentos
-CREATE TABLE divisions (
-  division_id int NOT NULL UNIQUE AUTO_INCREMENT,
-  name varchar(60) NOT NULL,
-  PRIMARY KEY (division_id)
-);
-
--- Agendamentos
+-- Agendamentos para uso dos equipamentos
 CREATE TABLE schedules (
   schedule_id int NOT NULL UNIQUE AUTO_INCREMENT,
-  request timestamp DEFAULT CURRENT_TIMESTAMP,
+  request_time timestamp DEFAULT CURRENT_TIMESTAMP,
   user_id int NOT NULL,
   equipment_id int NOT NULL,
   project_id int,
