@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS cem
 DEFAULT CHARACTER SET utf8
-DEFALUT COLLATE utf8_general_ci;
+DEFAULT COLLATE utf8_general_ci;
 USE cem;
 
 -- Status do usuário com a CEM
